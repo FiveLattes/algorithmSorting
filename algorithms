@@ -1,13 +1,39 @@
 import random as r
+import time as t
+#   establishes a list (rIntsLst) and a dictionary (rIntsDict) 
 rIntsLst = []
 rIntsDict = {}
-for b in range(0,100):
-    b += 1
-    ranVars = b
-    autoRanVars = str("ranVars" + " " + str(b))
-    i = r.randint(1,1000)
-    rIntsDict[autoRanVars] = i
-    rIntsLst.append(i)
-print (rIntsDict)
 
-print (list(rIntsDict.values()))
+varChecked = 0
+#   for loop used to create variables
+for b in range(0,100):
+
+    #   reassigns (b) a new value for each iteration (n = n + 1)
+    b += 1
+
+    #   gives formal syntax to a new variable (autoRanVars) using (b) to give the order of creation
+    autoRanVars = str("random value " + str(b))
+    
+    #   creates a new variable (i) which generates a random number
+    i = r.randint(1,1000)
+    
+    #   assigns the value (i) to the key (autoRanVars)
+    rIntsDict[autoRanVars] = i
+
+    #   appends (i) to (rIntsList) 
+    rIntsLst.append(i)
+
+#   prints dictionary
+#print (rIntsDict)
+
+#   prints the values in (rIntsDict) and (rIntsLst)
+#print (list(rIntsDict.values()))
+#print (rIntsLst)
+
+#   creates for loop that formats all (rIntsDict) elements neatly
+for key, value in rIntsDict.items():
+    print(key, ' : ', value)
+
+#   organises and prints the values from smallest to largest 
+rIntsLst.sort()
+print ("Organised values (ascending order): " + str(rIntsLst))
